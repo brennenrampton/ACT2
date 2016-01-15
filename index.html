@@ -1,6 +1,6 @@
 <html>
+<head/>
 <body>
-
 <h1>Utah Cities</h1>
 <p>Enter a city</p>
 <input type="text" id="box" onkeyup="showHints(this.value)">
@@ -10,29 +10,26 @@
 
 <script>
 
-var cities = {
+var cities = [
 	"Alpine",
 	"Altamont",
 	"Alton",
 	"Altonah"
-};
+];
 
 function showHints(str)
 {
 	var list="<ul>";
-	for(i = 0; i < cities.length; i++)
+	for(i=0;i<cities.length;i++)
 	{
-		if(cities[i].indexOf(str) === 0)
+		if(cities[i].indexOf(str)===0)
 		{
-			list += "<li>"+cities[i]+"</li>";
+			list+="<li>"+cities[i]+"</li>";
 		}
 	}
-	list += </ul>;
+	list += "</ul>";
 	document.getElementById("sug").innerHTML = list;
 }
-
-//document.getElementById("sug").innerHTML = list;
-
 </script>
 </body>
 </html>
